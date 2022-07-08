@@ -1,1 +1,22 @@
 
+Generar una lista de 10 valores enteros comprendidos entre 1 y 100.
+• Validar que no se repitan, para esto utilizar una de las colecciones deconjuntos vistos en clase: HashSet, TreeSet o LinkedHashSet.
+
+
+
+
+package com.mycompany.taller1odiney;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Taller1Odiney {
+
+    public static void main(String[] args) {
+        Set<Integer> grupo = new TreeSet<>();
+        while (grupo.size() < 10) {
+            int aleatorio = (int) (Math.random() * 100) + 1;
+            grupo.add(aleatorio);
+        }
+        System.out.println(grupo);
+    }
+}

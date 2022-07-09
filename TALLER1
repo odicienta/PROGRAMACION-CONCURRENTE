@@ -1,7 +1,7 @@
 
 • Generar una lista de 10 valores enteros comprendidos entre 1 y 100.
 • Validar que no se repitan, para esto utilizar una de las colecciones 
-    de conjuntos vistos en clase: HashSet, TreeSet o LinkedHashSet.
+    de conjuntos vistos en clase: HashSet, TreeSet o LinkedHashSet
 
 
 #Codigo

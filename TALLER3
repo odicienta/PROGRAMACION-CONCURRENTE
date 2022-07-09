@@ -1,0 +1,68 @@
+• 1- Hacer un programa en Java en donde se calcule el área y 
+      elperímetro de un triángulo utilizando Herencia.
+      
+      
+      
+#CLASE MAIN
+package com.mycompany.taller3;
+public class Taller3 {
+
+    public static void main(String[] args) {
+        Area area1= new Area();
+        area1.cargar1();
+        area1.cargar2();
+        area1.operar();
+        System.out.print("El area del triangulo es: ");
+        area1.mostrarResultado();
+        Perimetro perimetro1 = new Perimetro();
+        perimetro1.cargar1();
+        perimetro1.cargar2();
+        perimetro1.operar();
+        System.out.print("El perimetro es: ");
+        perimetro1.mostrarResultado();
+    }
+}
+
+#CLASE OPERACION
+package com.mycompany.taller3;
+import java.util.Scanner;
+public class Operacion {
+    protected Scanner teclado;
+    protected int base;
+    protected int altura;
+    protected int resultado;
+    
+    public Operacion() {
+        teclado = new Scanner(System.in);
+    }
+    
+    public void cargar1() {
+        System.out.println("Ingrese el valor de la base: ");
+        base=teclado.nextInt();   
+    }
+    
+    public void cargar2() {
+        System.out.println("Ingrese el valor de la altura: ");
+        altura=teclado.nextInt(); 
+    }
+
+    public void mostrarResultado() {
+        System.out.println(resultado);
+    }    
+}
+
+#CLASE AREA
+package com.mycompany.taller3;
+public class Area extends Operacion {
+    void operar(){
+        resultado= (base*altura)/2;
+    }
+}
+
+#CLASE PERIMETRO
+package com.mycompany.taller3;
+public class Perimetro extends Operacion {
+    void operar(){
+        resultado= (int) (base+altura+Math.sqrt(base*base+altura*altura));
+    }
+}

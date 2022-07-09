@@ -1,0 +1,77 @@
+• 1- Mostrar todos los números pares, impares y primos desde el 0(cero) 
+      hasta el 100 (cien) utilizando hilos.
+      
+      
+      
+package ejer4sem6;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Ejer4Sem6 extends Thread {
+    
+    public int a = 100;
+    private String identidad;
+    
+    public void nombre(String identidad){
+        this.identidad = identidad;
+    }
+    
+    @Override
+    public void run() {          
+    }
+    
+    public synchronized void pares(){
+        for (int i = 1; i <= a; i++) {
+            if (i % 2 == 0) {
+                System.out.println(identidad+ " "+i);
+            }
+        }
+    }
+    
+    public synchronized void impares(){
+        for (a=1;a<101;a++){
+            System.out.println(identidad+" "+a);
+            a++;
+        }
+    }
+    
+    public synchronized void primos(){
+        int num;
+        for (a = 1; a <= 101; a++) {
+            int counter=0; for(num =a;
+                    num>=1; num--) {
+                if(a%num==0) {
+                    counter = counter + 1;
+                }
+            }
+            if (counter ==2) {
+                System.out.println(identidad+" "+a);
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        Ejer4Sem6 num1 = new Ejer4Sem6();
+        Ejer4Sem6 num2 = new Ejer4Sem6();
+        Ejer4Sem6 num3 = new Ejer4Sem6();
+        Ejer4Sem6 num4 = new Ejer4Sem6();
+        num2.nombre("impar -->");
+        num3.nombre("Par-->");
+        num4.nombre("Primo-->");
+        num1.start();
+        num2.start();
+        num3.start();
+        try {
+            num1.impares();
+            num2.pares();
+            num3.primos();
+            System.out.println("\n");
+            Ejer4Sem6.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ejer4Sem6.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+}

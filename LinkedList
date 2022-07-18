@@ -1,0 +1,35 @@
+Confeccionar unprograma para llamarlos principales métodosde la clase LinkedList.
+
+package ejer4sem3;
+import java.util.*;
+import java.util.LinkedList;
+public class Ejer4Sem3 {
+    
+    public static void Imprimir(LinkedList<String> lista){
+            for (String elemento : lista)
+                System.out.print(elemento + "-");
+            System.out.println();
+    }     
+    public static void main(String[] args) {
+        LinkedList<String> lista1 = new LinkedList<String>();
+        lista1.add("Juan");
+        lista1.add("Luis");
+        lista1.add("Carlos");
+        Imprimir(lista1);
+        lista1.add(1, "Ana");
+        Imprimir(lista1);
+        lista1.remove(0);
+        Imprimir(lista1);
+        lista1.remove("Carlos");
+        Imprimir(lista1);
+        System.out.println("Cantidad de elementos en la lista: " +lista1.size());
+        if(lista1.contains("Ana"))
+            System.out.println("El nombre de 'Ana' si esta almacenado en la lista");
+        else
+            System.out.println("El nombre de 'Ana' no esta almacenado en la lista");
+        System.out.println("El segundo elemento de la lista es: " +lista1.get(1));
+        lista1.clear();
+        if (lista1.isEmpty())
+            System.out.println("La lista esta vacia");
+    }   
+}

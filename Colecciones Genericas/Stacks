@@ -1,3 +1,5 @@
+ Definir un objeto de la clase Stack y llamar a los métodos principales.
+
 package ejer1sem3;
 import java.util.*;
 import java.util.Stack;

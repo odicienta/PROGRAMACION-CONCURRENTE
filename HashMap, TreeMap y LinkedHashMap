@@ -1,0 +1,29 @@
+Almacenar un diccionario las palabras en español como 'clave' y lastraducciones de las mismas en el 'valor’.
+• Probar los métodos más significativos de la clase HashMap.
+
+package ejer7sem3;
+import java.util.*;
+public class Ejer7Sem3 {
+
+    public static void main(String[] args) {
+        Map<String, String> mapa1 = new HashMap<String, String>();
+        mapa1.put("Rojo", "Red");
+        mapa1.put("verde", "green");
+        mapa1.put("azul", "blue");
+        mapa1.put("blanco", "white");
+        System.out.println("Listado completo de valores");
+        for (String valor : mapa1.values())
+            System.out.print(valor + "-");
+        System.out.println();
+        System.out.println("Listado completo de claves");
+        for (String clave : mapa1.keySet())
+            System.out.print(clave + "-");
+        System.out.println();
+        System.out.println("La traduccion de rojo es:" +mapa1.get("Rojo"));
+        if(mapa1.containsKey("Negro"))
+            System.out.println("No existe la clave 'Negro'");
+        System.out.println("La traduccion de marron es:" +mapa1.getOrDefault("Marron", "No existe la clave marron"));
+        mapa1.remove("Rojo");
+        System.out.println(mapa1);
+    }    
+}
